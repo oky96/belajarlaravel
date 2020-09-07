@@ -34,7 +34,7 @@
 
                                       <div class="form-group col-md-6">
                                         <label for="date">Tanggal keluar</label>
-                                        <input type="date" name="tanggal_keluar" class="form-control"  placeholder="Tanggal masuk" value="{{ $service->tanggal_keluar }}">
+                                        <input type="date" name="tanggal_keluar" class="form-control"  placeholder="Tanggal masuk" value="{{ $service->Tanggal_keluar }}">
                                       </div>
 
                                     <div class="form-group col-md-6">
