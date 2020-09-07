@@ -126,7 +126,7 @@
 
                   <div class="form-group col-md-6">
                     <label for="date">Tanggal keluar</label>
-                    <input type="date" name="tanggal_keluar" class="form-control"  placeholder="Tanggal masuk">
+                    <input type="date" name="tanggal_keluar" class="form-control"  placeholder="Tanggal keluar">
                   </div>
 
                 <div class="form-group col-md-6">
