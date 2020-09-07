@@ -82,8 +82,8 @@
                   </div>
 
                 <div class="form-group col-md-6">
-                    <label for="text">No.hp</label>
-                    <input type="text" name="no_hp" class="form-control"  placeholder="kerusakan">
+                    <label for="number">No.hp</label>
+                    <input type="number" name="no_hp" class="form-control"  placeholder="No.hp">
 
                   </div>
 
