@@ -25,15 +25,15 @@ class ServiceController extends Controller
     public function index()
     {
         $data['services'] = Service::all();
-        return view('tampilantabel.tabelservice',$data);
+        return view('tampilantabel.tabelservice', $data);
     }
 
     public function invoice_pdf($id)
     {
         $laporan = DB::table('services')
-        ->join('pelanggans', 'services.pelanggan_id', '=' ,'pelanggans.id')->where('services.id', $id)->first();
+            ->join('pelanggans', 'services.pelanggan_id', '=', 'pelanggans.id')->where('services.id', $id)->first();
 
-        $pdf = PDF::loadview('tampilantabel.invoice_pdf', ['laporan'=> $laporan]);
+        $pdf = PDF::loadview('tampilantabel.invoice_pdf', ['laporan' => $laporan]);
         return $pdf->stream();
     }
 
@@ -56,14 +56,14 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $valid = $request->validate([
-            'Nama_barang'=>'required',
-            'Tanggal_masuk'=>'required',
-            'tanggal_keluar'=>'required',
-            'Kerusakan'=>'required',
-            'Perbaikan'=>'required',
-            'unit' =>'required',
-            'Harga'=>'required',
-            'Status'=>'required',
+            'Nama_barang' => 'required',
+            'Tanggal_masuk' => 'required',
+            'tanggal_keluar' => 'required',
+            'Kerusakan' => 'required',
+            'Perbaikan' => 'required',
+            'unit' => 'required',
+            'Harga' => 'required',
+            'Status' => 'required',
             'pelanggan_id' => 'required',
 
 
@@ -71,7 +71,7 @@ class ServiceController extends Controller
         ]);
         //   dd($valid);
         service::create($valid);
-        return redirect()->back()->with('status','<div class="alert alert-success" role="alert">
+        return redirect()->back()->with('status', '<div class="alert alert-success" role="alert">
             Data Berhasil Di tambahkan
       </div>');
     }
@@ -97,7 +97,7 @@ class ServiceController extends Controller
     {
 
 
-        $data['service'] = Service::find($id)->first();
+        $data['service'] = Service::findOrFail($id);
 
 
         return view('tambah.edit', $data);
@@ -115,18 +115,18 @@ class ServiceController extends Controller
 
 
         $valid = $request->validate([
-            'Nama_barang'=>'required',
-            'Tanggal_masuk'=>'required',
-            'Kerusakan'=>'required',
-            'Perbaikan'=>'required',
-            'unit' =>'required',
-            'tanggal_keluar' =>'required',
-            'Harga'=>'required',
-            'Status'=>'required',
+            'Nama_barang' => 'required',
+            'Tanggal_masuk' => 'required',
+            'Kerusakan' => 'required',
+            'Perbaikan' => 'required',
+            'unit' => 'required',
+            'tanggal_keluar' => 'required',
+            'Harga' => 'required',
+            'Status' => 'required',
         ]);
 
         Service::where('id', $id)->update($valid);
-        return redirect('service')->with('status','<div class="alert alert-success" role="alert">
+        return redirect('service')->with('status', '<div class="alert alert-success" role="alert">
             Data Berhasil Di ubah
       </div>');
     }
@@ -140,7 +140,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         service::destroy($id);
-        return redirect()->back()->with('status','<div class="alert alert-danger" role="alert">
+        return redirect()->back()->with('status', '<div class="alert alert-danger" role="alert">
         Data Berhasil Di Hapus
     </div>');
     }

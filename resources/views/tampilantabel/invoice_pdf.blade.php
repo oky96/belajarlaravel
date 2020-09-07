@@ -123,7 +123,7 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="#" style="width:100%; max-width:300px;">
+                                {{-- <img src="#" style="width:100%; max-width:300px;"> --}}
                             </td>
 
                             <td>
@@ -248,7 +248,7 @@
 
             <tr class="item">
                 <td>
-                    {{$laporan->tanggal_keluar}}
+                    {{$laporan->Tanggal_keluar}}
                 </td>
 
                 <td>

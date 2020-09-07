@@ -45,7 +45,7 @@
                 <td>{{ $l->no_hp }}</td>
                 <td>{{ $l->Nama_barang }}</td>
                 <td>{{ $l->Tanggal_masuk }}</td>
-                <td>{{ $l->tanggal_keluar }}</td>
+                <td>{{ $l->Tanggal_keluar }}</td>
                 <td>{{ $l->Kerusakan }}</td>
                 <td>{{ $l->Perbaikan }}</td>
                 <td>{{ $l->unit }}</td>

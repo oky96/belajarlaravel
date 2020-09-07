@@ -40,7 +40,7 @@
                      <td>{{$loop->iteration}}</td>
                      <td>{{$service->Nama_barang}}</td>
                      <td>{{$service->Tanggal_masuk}}</td>
-                     <td>{{$service->tanggal_keluar}}</td>
+                     <td>{{$service->Tanggal_keluar}}</td>
                      <td>{{$service->Kerusakan}}</td>
                      <td>{{$service->Perbaikan}}</td>
                      <td>{{$service->unit}}</td>
